@@ -8,10 +8,7 @@ public class GuessingGame {
         num = (int) (Math.random()*100) + 1;
     }
 
-    public String acceptGuess(String userGuess) {
-        if (userGuess == null) return "";
-        int guess = Integer.parseInt(userGuess);
-        if (guess < 0 || guess > 100) return "";
+    public String acceptGuess(Integer guess) {
         String result = "lower";
         if (num == guess)
             result = "correct";

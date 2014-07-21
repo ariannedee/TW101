@@ -9,8 +9,12 @@ public class GuessingGame {
     }
 
     public String acceptGuess(String userGuess) {
-        if (userGuess == null) return "";
-        int guess = Integer.parseInt(userGuess);
+        int guess;
+        try {
+            guess = Integer.parseInt(userGuess);
+        } catch (Exception e) {
+            return "";
+        }
         if (guess < 0 || guess > 100) return "";
         String result = "lower";
         if (num == guess)
